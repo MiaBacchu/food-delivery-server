@@ -36,6 +36,7 @@ async function run() {
       const id = req.params.id;
       const query = { _id: ObjectId(id) }
       const result = await foodCollection.findOne(query);
+      console.log(result)
       res.json(result)
     })
 
@@ -54,7 +55,6 @@ async function run() {
     })
 
     app.post('/user', async (req, res) => {
-      const userCollection = database.collection("user");
       const newUser = req.body;
       const result = await userCollection.insertOne(newUser)
       console.log(req.body.emailName)
