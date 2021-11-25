@@ -54,7 +54,7 @@ async function run() {
       res.json(result)
     })
 
-    app.post('/user', async (req, res) => {
+    app.post('/placeOrder', async (req, res) => {
       const newUser = req.body;
       const result = await userCollection.insertOne(newUser)
       console.log(req.body.emailName)
